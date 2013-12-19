@@ -2,7 +2,7 @@ file = "http://ww2.coastal.edu/kingw/statistics/R-tutorials/text/gorilla.csv"
 read.csv(file) -> gorilla
 str(gorilla)
 
-glm.out = glm(seen ~ W:C:CW, family = binomial(logit), data = gorilla)
+glm.out = glm(seen ~ W*C*CW, family = binomial(logit), data = gorilla)
 summary(glm.out)
 anova(glm.out, test="Chisq")
 
